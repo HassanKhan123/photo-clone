@@ -1,8 +1,14 @@
 package com.basics.khan.basics.photo.clone;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Photo {
     private String id;
+
+    @NotEmpty
     private String fileName;
+
+    private byte[] data;
 
     public Photo() {
     }
@@ -10,6 +16,10 @@ public class Photo {
     public Photo(String id, String fileName) {
         this.id = id;
         this.fileName = fileName;
+    }
+
+    public byte[] getData() {
+        return data;
     }
 
     public String getId() {
@@ -26,6 +36,10 @@ public class Photo {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
     }
 
 }
