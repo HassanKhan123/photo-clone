@@ -1,5 +1,7 @@
 package com.basics.khan.basics.photo.clone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.validation.constraints.NotEmpty;
 
 public class Photo {
@@ -18,6 +20,7 @@ public class Photo {
         this.fileName = fileName;
     }
 
+    @JsonIgnore
     public byte[] getData() {
         return data;
     }
