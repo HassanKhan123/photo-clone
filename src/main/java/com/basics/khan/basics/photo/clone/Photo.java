@@ -10,6 +10,8 @@ public class Photo {
     @NotEmpty
     private String fileName;
 
+    private String contentType;
+
     private byte[] data;
 
     public Photo() {
@@ -29,8 +31,16 @@ public class Photo {
         return id;
     }
 
+    public String getContentType() {
+        return contentType;
+    }
+
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public String getFileName() {
