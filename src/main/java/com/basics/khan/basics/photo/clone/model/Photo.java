@@ -1,4 +1,4 @@
-package com.basics.khan.basics.photo.clone;
+package com.basics.khan.basics.photo.clone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

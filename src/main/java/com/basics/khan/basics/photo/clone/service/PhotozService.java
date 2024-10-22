@@ -1,6 +1,9 @@
-package com.basics.khan.basics.photo.clone;
+package com.basics.khan.basics.photo.clone.service;
 
 import org.springframework.stereotype.Service;
+
+import com.basics.khan.basics.photo.clone.model.Photo;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;

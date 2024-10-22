@@ -1,4 +1,4 @@
-package com.basics.khan.basics.photo.clone;
+package com.basics.khan.basics.photo.clone.web;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+
+import com.basics.khan.basics.photo.clone.model.Photo;
+import com.basics.khan.basics.photo.clone.service.PhotozService;
 
 @RestController
 public class PhotozController {
