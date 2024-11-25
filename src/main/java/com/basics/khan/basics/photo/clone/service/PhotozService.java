@@ -3,44 +3,38 @@ package com.basics.khan.basics.photo.clone.service;
 import org.springframework.stereotype.Service;
 
 import com.basics.khan.basics.photo.clone.model.Photo;
-
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import java.util.UUID;
+import com.basics.khan.basics.photo.clone.repository.PhotozRepository;
 
 // @Component
 @Service
 public class PhotozService {
 
-    private Map<String, Photo> db = new HashMap<>() {
-        {
-            put("1", new Photo("1", "hello.jpg"));
-        }
-    };
+    private final PhotozRepository photozRepository;
 
-    public Collection<Photo> get() {
-        return db.values();
+    public PhotozService(PhotozRepository photozRepository) {
+        this.photozRepository = photozRepository;
     }
 
-    public Photo get(String id) {
-
-        return db.get(id);
+    public Iterable<Photo> get() {
+        return photozRepository.findAll();
     }
 
-    public Photo remove(String id) {
+    public Photo get(Integer id) {
 
-        return db.remove(id);
+        return photozRepository.findById(id).orElse(null);
+    }
+
+    public void remove(Integer id) {
+        photozRepository.deleteById(id);
     }
 
     public Photo save(String fileName, String contentType, byte[] data) {
         Photo photo = new Photo();
 
-        photo.setId(UUID.randomUUID().toString());
         photo.setFileName(fileName);
         photo.setData(data);
         photo.setContentType(contentType);
-        db.put(photo.getId(), photo);
+        photozRepository.save(photo);
         return photo;
 
     }
